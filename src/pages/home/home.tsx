@@ -18,10 +18,10 @@ const HomePage = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <div>
           Edit <code>src/App.tsx</code> and save to reload.
           {isAuthenticated ? <p>You are authenticated</p> : null}
-        </p>
+        </div>
         <Link className="App-link" to="/login">
           Learn React
         </Link>

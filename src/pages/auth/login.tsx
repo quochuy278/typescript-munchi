@@ -7,6 +7,8 @@ import { Initialize } from "../../servies/initialize";
 import { RootState } from "../../store";
 import { authActions } from "../../store/auth-slice";
 import styles from "./login.module.css";
+import AuthenticationService from "../../servies/authentication";
+import AuthenticationProviderEnum from "../../enum/authentication-provider";
 
 //Icons
 import { GoogleIcon, FacebookIcon } from "../../assets";
@@ -24,11 +26,18 @@ const LoginPage = () => {
       Initialize();
     });
   console.log(isAuthenticated);
-  const submitHandler = (event: any) => {
+  const submitHandler = async (event: any) => {
     event.preventDefault();
+    AuthenticationService.login(AuthenticationProviderEnum.Google);
+    
     dispatch(authActions.login());
     navigate('/', {replace:true})
   };
+
+  const loginWithProvider = async (event: any, provider: string) => {
+    event.preventDefault();
+    AuthenticationService.login(provider);
+  }
  
   return (
     <CenterWrapper>
@@ -52,7 +61,9 @@ const LoginPage = () => {
           <Box
             component="form"
             className={styles.form__wrapper}
-            onSubmit={submitHandler}
+            onSubmit={async (event: any) => {
+              await loginWithProvider(event, AuthenticationProviderEnum.Google)
+            }}
           >
             <Button
               variant="outlined"

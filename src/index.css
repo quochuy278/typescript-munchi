@@ -3,6 +3,22 @@
   --ion-safe-area-bottom: 20px;
   --ion-safe-area-left: 10px;
   --ion-safe-area-right: 10px;
+  /* Colors */
+  --primary-color: "#FF3537";
+  --primary-color-hover: rgb(255, 53, 55, 0.5);
+  --primary-color-active: rgb(255, 53, 55, 0.8);
+
+  --secondary-color: "#101012";
+  --gray-palette-300: "#E7E7E7";
+  --gray-palette-200: "F5F5F6";
+  --gray-palette-100: "#FFFFFF";
+
+  --gray-palette-transparent: rgb(16, 16, 18, 0.9);
+  --gray-palette-transparent-active: rgb(16, 16, 18, 0.5);
+  --gray-palette-transparent-hover: rgb(16, 16, 18, 0.15);
+
+  --success--safety: rgb(35, 197, 82, 1);
+  --info--safety: rgb(52, 120, 246, 1);
 }
 html {
   margin-top: var(--ion-safe-area-top);
@@ -11,17 +27,16 @@ html {
   margin-left: var(--ion-safe-area-left);
 }
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

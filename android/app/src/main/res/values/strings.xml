@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">typescript-munchi</string>
     <string name="title_activity_main">typescript-munchi</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="custom_url_scheme">munchi.customer.mobileapp</string>
+    <string name="facebook_app_id">625227755264760</string>
+    <string name="facebook_client_token">d17a143bc84f94cce5723ff0716d5f67</string>
 </resources>

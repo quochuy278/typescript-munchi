@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.h1 {
+  line-height: 32.26px;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 28px;
+  font-family: "F37Judge";
+}
+
+.h2 {
+  line-height: 25.34px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 22px;
+  font-family: "F37Judge";
+}

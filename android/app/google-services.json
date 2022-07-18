@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "879088519061",
+    "project_id": "capacitor-react-munchi",
+    "storage_bucket": "capacitor-react-munchi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879088519061:android:2270c4617abaad49df189c",
+        "android_client_info": {
+          "package_name": "munchi.customer.mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879088519061-4dkrii7924ku3gur6sgigt985mn76d6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDeEdlUg-3lwPQ-gOGVjKmWl6ZtazKJIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879088519061-4dkrii7924ku3gur6sgigt985mn76d6c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "879088519061-irjvp24qrnaqppj5s1j9ep7ruqtvqcqs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "munchi.customer.mobileapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,12 +21,8 @@ const LoginPage = () => {
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated
   );
- 
-    useEffect(() => {
-      Initialize();
-    });
   console.log(isAuthenticated);
-  const submitHandler = async (event: any) => {
+  const googleSubmitHandler = async (event: any) => {
     event.preventDefault();
     AuthenticationService.login(AuthenticationProviderEnum.Google);
     
@@ -41,61 +37,49 @@ const LoginPage = () => {
  
   return (
     <CenterWrapper>
-  
-        <Container className={styles.content_container}>
-          <Box
-            component="form"
-            className={styles.form__wrapper}
-            onSubmit={submitHandler}
+      <Container className={styles.content_container}>
+        <Box
+          component="form"
+          className={styles.form__wrapper}
+          onSubmit={async (event: any) => {
+            await loginWithProvider(event, AuthenticationProviderEnum.Google);
+          }}
+        >
+          <Button
+            variant="outlined"
+            type="submit"
+            className={styles.login_btn}
+            color="primary"
           >
-            <Button
-              variant="outlined"
-              type="submit"
-              className={styles.login_btn}
-              color="primary"
-            >
-              <img src={GoogleIcon} alt="logo" />
-              <span> Login with Google</span>
-            </Button>
-          </Box>
-          <Box
-            component="form"
-            className={styles.form__wrapper}
-            onSubmit={async (event: any) => {
-              await loginWithProvider(event, AuthenticationProviderEnum.Google)
-            }}
-          >
-            <Button
-              variant="outlined"
-              type="submit"
-              className={styles.login_btn}
-            >
-              <img src={FacebookIcon} alt="logo" />
-              <span> Login with Facebook</span>
-            </Button>
-          </Box>
-          <Box component="form" className={styles.form__wrapper}>
-            <Button
-              variant="outlined"
-              type="submit"
-              className={styles.login_btn}
-            >
-              <AppleIcon sx={{ color: "black" }} />
-              <span> Login with Apple (not implemented)</span>
-            </Button>
-          </Box>
-          <Box component="form" className={styles.form__wrapper}>
-            <Button
-              variant="outlined"
-              type="submit"
-              className={styles.login_btn}
-            >
-              <MailIcon sx={{ color: "black" }} />
-              <span> Login with Email</span>
-            </Button>
-          </Box>
-        </Container>
-      
+            <img src={GoogleIcon} alt="logo" />
+            <span> Login with Google</span>
+          </Button>
+        </Box>
+        <Box
+          component="form"
+          className={styles.form__wrapper}
+          onSubmit={async (event: any) => {
+            await loginWithProvider(event, AuthenticationProviderEnum.Facebook);
+          }}
+        >
+          <Button variant="outlined" type="submit" className={styles.login_btn}>
+            <img src={FacebookIcon} alt="logo" />
+            <span> Login with Facebook</span>
+          </Button>
+        </Box>
+        <Box component="form" className={styles.form__wrapper}>
+          <Button variant="outlined" type="submit" className={styles.login_btn}>
+            <AppleIcon sx={{ color: "black" }} />
+            <span> Login with Apple (not implemented)</span>
+          </Button>
+        </Box>
+        <Box component="form" className={styles.form__wrapper}>
+          <Button variant="outlined" type="submit" className={styles.login_btn}>
+            <MailIcon sx={{ color: "black" }} />
+            <span> Login with Email</span>
+          </Button>
+        </Box>
+      </Container>
     </CenterWrapper>
   );
 };

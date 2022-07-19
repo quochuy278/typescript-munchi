@@ -1,14 +1,17 @@
 import IAuthenticationProvider from "../../interfaces/authentication-provider";
-import { LoginHandler } from "../auth-services";
+
 import GoogleProvider from "./providers/google";
 import AuthenticationProviderEnum from "../../enum/authentication-provider";
+import FacebookProvider from "./providers/facebook";
 
 const getProvider = (provider:string) => {
     switch (provider) {
-        case AuthenticationProviderEnum.Google:
-            return GoogleProvider;
-        default:
-            return null;
+      case AuthenticationProviderEnum.Google:
+        return GoogleProvider;
+      case AuthenticationProviderEnum.Facebook:
+        return FacebookProvider;
+      default:
+        return null;
     }
 }
 

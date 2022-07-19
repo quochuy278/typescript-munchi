@@ -5,15 +5,18 @@ import { RootState } from "../../store";
 import { Box, Button } from "@mui/material";
 import { authActions } from "../../store/auth-slice";
 const HomePage = () => {
-    const isAuthenticated = useSelector((state:RootState) => state.auth.isAuthenticated)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-    console.log(isAuthenticated)
-      const logoutHandler = (event: any) => {
-        event.preventDefault();
-        dispatch(authActions.logout());
-        navigate("/login", { replace: true });
-      };
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
+  const userInfo = useSelector((state: RootState) => state.users);
+  const resInfo = useSelector((state: RootState) => state.response);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const logoutHandler = (event: any) => {
+    event.preventDefault();
+    dispatch(authActions.logout());
+    navigate("/login", { replace: true });
+  };
   return (
     <div className="App">
       <header className="App-header">

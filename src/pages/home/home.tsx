@@ -12,6 +12,9 @@ const HomePage = () => {
   const resInfo = useSelector((state: RootState) => state.response);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // console.log(isAuthenticated);
+  // console.log(resInfo);
+   
   const logoutHandler = (event: any) => {
     event.preventDefault();
     dispatch(authActions.logout());

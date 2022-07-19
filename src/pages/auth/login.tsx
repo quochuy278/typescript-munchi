@@ -21,18 +21,19 @@ const LoginPage = () => {
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated
   );
-  console.log(isAuthenticated);
-  const googleSubmitHandler = async (event: any) => {
-    event.preventDefault();
-    AuthenticationService.login(AuthenticationProviderEnum.Google);
+  
+  // const googleSubmitHandler = async (event: any) => {
+  //   event.preventDefault();
+  //   AuthenticationService.login(AuthenticationProviderEnum.Google);
     
-    dispatch(authActions.login());
-    navigate('/', {replace:true})
-  };
+  //   dispatch(authActions.login());
+  //   navigate('/', {replace:true})
+  // };
 
   const loginWithProvider = async (event: any, provider: string) => {
     event.preventDefault();
     AuthenticationService.login(provider);
+    navigate('/')
   }
  
   return (

@@ -29,7 +29,6 @@ let GoogleProvider: SocialAuthenticationProvider = {
   login: async () => {
     Initialize("Google");
     let loggedUser = await GoogleAuth.signIn();
-
     console.log(loggedUser);
     storeResponse(loggedUser);
     let user: IUser = {

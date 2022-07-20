@@ -1,4 +1,4 @@
-import IUser from "../../interfaces/user";
+import {IUser} from "../../interfaces/user";
 import store from "../../store";
 import { responseActions } from "../../store/response-slice";
 import { userActions } from "../../store/user-slice";

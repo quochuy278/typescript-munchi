@@ -68,10 +68,16 @@ const LoginPage = () => {
             <span> Login with Facebook</span>
           </Button>
         </Box>
-        <Box component="form" className={styles.form__wrapper}>
+        <Box
+          component="form"
+          className={styles.form__wrapper}
+          onSubmit={async (event: any) => {
+            await loginWithProvider(event, AuthenticationProviderEnum.Apple);
+          }}
+        >
           <Button variant="outlined" type="submit" className={styles.login_btn}>
             <AppleIcon sx={{ color: "black" }} />
-            <span> Login with Apple (not implemented)</span>
+            <span> Login with Apple </span>
           </Button>
         </Box>
         <Box component="form" className={styles.form__wrapper}>

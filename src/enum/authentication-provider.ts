@@ -1,6 +1,7 @@
 enum AuthenticationProviderEnum {
     Facebook = "Facebook",
-    Google = "Google"
+    Google = "Google",
+    Apple = "Apple"
 }
 
 export default AuthenticationProviderEnum;

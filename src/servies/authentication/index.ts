@@ -1,8 +1,9 @@
-import IAuthenticationProvider from "../../interfaces/authentication-provider";
+
 
 import GoogleProvider from "./providers/google";
 import AuthenticationProviderEnum from "../../enum/authentication-provider";
 import FacebookProvider from "./providers/facebook";
+import AppleProvider from "./providers/apple";
 
 const getProvider = (provider:string) => {
     switch (provider) {
@@ -10,6 +11,8 @@ const getProvider = (provider:string) => {
         return GoogleProvider;
       case AuthenticationProviderEnum.Facebook:
         return FacebookProvider;
+      case AuthenticationProviderEnum.Apple:
+        return AppleProvider;
       default:
         return null;
     }

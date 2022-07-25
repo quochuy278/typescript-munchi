@@ -8,7 +8,7 @@ import { RootState } from "../../store";
 import { authActions } from "../../store/auth-slice";
 import styles from "./login.module.css";
 import AuthenticationService from "../../servies/authentication";
-import AuthenticationProviderEnum from "../../enum/authentication-provider";
+import AuthenticationProviderEnum from "../../servies/authentication/enum/authentication-provider";
 
 //Icons
 import { GoogleIcon, FacebookIcon } from "../../assets";

@@ -1,7 +1,7 @@
 
 
 import GoogleProvider from "./providers/google";
-import AuthenticationProviderEnum from "../../enum/authentication-provider";
+import AuthenticationProviderEnum from "./enum/authentication-provider";
 import FacebookProvider from "./providers/facebook";
 import AppleProvider from "./providers/apple";
 

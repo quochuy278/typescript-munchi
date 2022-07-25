@@ -1,6 +1,6 @@
 import axios from "axios";
-import AuthenticationProviderEnum from "../../enum/authentication-provider";
-import {FacebookUser, IUser }from "../../interfaces/user";
+import AuthenticationProviderEnum from "../authentication/enum/authentication-provider";
+import {FacebookUser, IUser }from "../authentication/interfaces/user";
 
 export async function verifyToken(accessToken: string, provider: string) {
   if (provider == AuthenticationProviderEnum.Facebook) {

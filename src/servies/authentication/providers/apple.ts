@@ -1,5 +1,5 @@
-import { SocialAuthenticationProvider } from "../../../interfaces/authentication-provider";
-import{ IUser} from "../../../interfaces/user";
+import { SocialAuthenticationProvider } from "../interfaces/authentication-provider";
+import{ IUser} from "../interfaces/user";
 import { storeResponse, storeUserInfo } from "../../helpers/actions";
 import { Initialize } from "../../initialize";
 

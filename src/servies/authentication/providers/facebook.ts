@@ -1,5 +1,5 @@
-import { SocialAuthenticationProvider } from "../../../interfaces/authentication-provider";
-import{ FacebookUser, IUser} from "../../../interfaces/user";
+import { SocialAuthenticationProvider } from "../interfaces/authentication-provider";
+import{ FacebookUser, IUser} from "../interfaces/user";
 import {
   clearResponse,
   clearUserInfo,
@@ -12,7 +12,7 @@ import {
   FacebookLoginResponse,
 } from "@capacitor-community/facebook-login";
 import { verifyToken } from "../../api/apis-service";
-import AuthenticationProviderEnum from "../../../enum/authentication-provider";
+import AuthenticationProviderEnum from "../enum/authentication-provider";
 
 
 let FacebookProvider: SocialAuthenticationProvider = {

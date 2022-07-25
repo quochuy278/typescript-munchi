@@ -1,3 +1,4 @@
 import LoginPage from "./auth/login";
 import HomePage from "./home/home";
-export { LoginPage, HomePage };
+import MainPage from "./main/main";
+export { LoginPage, HomePage, MainPage };

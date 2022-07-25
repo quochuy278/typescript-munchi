@@ -1,6 +1,6 @@
 import { GoogleAuth } from "@codetrix-studio/capacitor-google-auth";
 import { FacebookLogin } from "@capacitor-community/facebook-login";
-import AuthenticationProviderEnum from "../enum/authentication-provider";
+import AuthenticationProviderEnum from "./authentication/enum/authentication-provider";
 
 export async function Initialize(provider:string) {
   if ((provider == AuthenticationProviderEnum.Google)) {

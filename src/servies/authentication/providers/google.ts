@@ -1,5 +1,5 @@
-import {SocialAuthenticationProvider} from "../../../interfaces/authentication-provider";
-import{ IUser }from "../../../interfaces/user";
+import {SocialAuthenticationProvider} from "../interfaces/authentication-provider";
+import{ IUser }from "../interfaces/user";
 import { GoogleAuth } from "@codetrix-studio/capacitor-google-auth";
 
 import { Initialize } from "../../initialize";

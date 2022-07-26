@@ -19,6 +19,8 @@
 
   --success--safety: rgb(35, 197, 82, 1);
   --info--safety: rgb(52, 120, 246, 1);
+
+ 
 }
 /* html {
 
@@ -38,7 +40,26 @@ code {
     monospace;
 }
 .swiper-pagination-bullet-active {
-
   background-color: #FF3537 !important;
-  top: 0 !important;
 }
+ @font-face {
+    font-family: 'F37Ginger';
+    src: url('./assets//fonts/F37Ginger-Regular.ttf')format("truetype")
+  }
+
+   @font-face {
+    font-family: 'F37Judge';
+    src: url('./assets//fonts/F37Judge-Regular.ttf')format("truetype");
+  }
+
+   @font-face {
+    font-family: 'F37GingerItalic';
+    src: url('./assets//fonts/F37Ginger-Italic.ttf')format("truetype");
+  }
+
+   @font-face {
+    font-family: 'F37JudgeBold';
+    src: url('./assets//fonts/F37Judge-Bold.ttf')format("truetype");
+  }
+
+ 

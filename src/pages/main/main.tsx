@@ -56,6 +56,7 @@ const CustomTabs = styled(Tabs)(({ theme }) => ({
 }));
 const CustomTabPanel = styled(TabPanel)(({ theme }) => ({
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   "	.MuiButtonBase-root": {

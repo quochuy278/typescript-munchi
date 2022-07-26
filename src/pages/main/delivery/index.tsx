@@ -8,6 +8,9 @@ import "swiper/css/scrollbar";
 import { Fragment } from "react";
 import ImageSlider from "../../../components/UI/image-slider";
 import { Typography } from "@mui/material";
+
+import TrendingList from "../../../components/Trending/trendinglist";
+
 const DUMMY_DATA = [
   {
     url: Dummy,
@@ -36,15 +39,19 @@ const DUMMY_DATA = [
 ];
 
 const DeliveryPage = () => {
-  
   return (
     <Fragment>
-      <div className={styles.slider__container}>
-        <div className={styles.slideshow__container}>
-          <ImageSlider />
+      <ImageSlider />
+      <div className={styles.delivery__container}>
+        <Typography variant="h1">Trending right now</Typography>
+        <div className={styles.trending__container}>
+          <TrendingList />
         </div>
+        {/* Cards slider */}
+
+        <Typography variant="h1">Choose your vibe</Typography>
+        <Typography variant="h1">Venues delivering to you</Typography>
       </div>
-      {/* <Typography>hello</Typography> */}
     </Fragment>
   );
 };

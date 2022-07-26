@@ -35,29 +35,32 @@ const DUMMY_DATA = [
 const ImageSlider= () => {
   return (
     <Fragment>
-      <Swiper
-        modules={[Virtual, Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        virtual
-        centeredSlidesBounds
-        className={styles.mySwiper}
-        pagination={{
-          el: ".my-custom-pagination-div",
-          clickable: true,
-        }}
-        centeredSlides
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {DUMMY_DATA.map((slideContent, index) => (
-          <SwiperSlide key={slideContent.caption} virtualIndex={index}>
-            <img src={slideContent.url} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div
-        className={`my-custom-pagination-div ${styles.swiperpagination}`}
-      ></div>
+      <div className={styles.slider__container}>
+        <div className={styles.slideshow__container}>
+          <Swiper
+            modules={[Virtual, Pagination]}
+            spaceBetween={50}
+            slidesPerView={1}
+            virtual
+            centeredSlidesBounds
+            className={styles.mySwiper}
+            pagination={{
+              el: ".my-custom-pagination-div",
+              clickable: true,
+            }}
+            centeredSlides
+          >
+            {DUMMY_DATA.map((slideContent, index) => (
+              <SwiperSlide key={slideContent.caption} virtualIndex={index}>
+                <img src={slideContent.url} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div
+            className={`my-custom-pagination-div ${styles.swiperpagination}`}
+          ></div>
+        </div>
+      </div>
     </Fragment>
   );
 }

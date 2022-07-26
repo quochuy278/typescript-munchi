@@ -14,6 +14,7 @@ import AuthenticationProviderEnum from "../../servies/authentication/enum/authen
 import { GoogleIcon, FacebookIcon } from "../../assets";
 import AppleIcon from "@mui/icons-material/Apple";
 import MailIcon from "@mui/icons-material/Mail";
+import styled from "@emotion/styled";
 const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -30,12 +31,17 @@ const LoginPage = () => {
   //   navigate('/', {replace:true})
   // };
 
+
   const loginWithProvider = async (event: any, provider: string) => {
     event.preventDefault();
     AuthenticationService.login(provider);
     navigate('/')
   }
- 
+  
+  const CustomButton = styled(Button)(({ theme }) => ({
+    color: '#101012',
+    border: '0.5px solid #ADADAD'
+  }));
   return (
     <CenterWrapper>
       <Container className={styles.content_container}>
@@ -46,7 +52,7 @@ const LoginPage = () => {
             await loginWithProvider(event, AuthenticationProviderEnum.Google);
           }}
         >
-          <Button
+          <CustomButton
             variant="outlined"
             type="submit"
             className={styles.login_btn}
@@ -54,7 +60,7 @@ const LoginPage = () => {
           >
             <img src={GoogleIcon} alt="logo" />
             <span> Login with Google</span>
-          </Button>
+          </CustomButton>
         </Box>
         <Box
           component="form"
@@ -63,10 +69,14 @@ const LoginPage = () => {
             await loginWithProvider(event, AuthenticationProviderEnum.Facebook);
           }}
         >
-          <Button variant="outlined" type="submit" className={styles.login_btn}>
+          <CustomButton
+            variant="outlined"
+            type="submit"
+            className={styles.login_btn}
+          >
             <img src={FacebookIcon} alt="logo" />
             <span> Login with Facebook</span>
-          </Button>
+          </CustomButton>
         </Box>
         <Box
           component="form"
@@ -75,16 +85,20 @@ const LoginPage = () => {
             await loginWithProvider(event, AuthenticationProviderEnum.Apple);
           }}
         >
-          <Button variant="outlined" type="submit" className={styles.login_btn}>
+          <CustomButton
+            variant="outlined"
+            type="submit"
+            className={styles.login_btn}
+          >
             <AppleIcon sx={{ color: "black" }} />
             <span> Login with Apple </span>
-          </Button>
+          </CustomButton>
         </Box>
         <Box component="form" className={styles.form__wrapper}>
-          <Button variant="outlined" type="submit" className={styles.login_btn}>
+          <CustomButton variant="outlined" type="submit" className={styles.login_btn}>
             <MailIcon sx={{ color: "black" }} />
             <span> Login with Email</span>
-          </Button>
+          </CustomButton>
         </Box>
       </Container>
     </CenterWrapper>

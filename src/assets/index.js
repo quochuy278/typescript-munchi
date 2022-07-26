@@ -7,6 +7,7 @@ import MainMunchiLogo from "./icons/main-logo.svg";
  import FacebookIcon from "./icons/facebook.svg";
 import LiveLocation from "./icons/livelocation.svg"
 import Dummy from "./img/dummy.jpg"
+import HappyFace from "./icons/happy-face.svg"
 
 export {
   AppleIcon,
@@ -18,4 +19,5 @@ export {
   FacebookIcon,
   LiveLocation,
   Dummy,
+  HappyFace,
 };

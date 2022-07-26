@@ -1,4 +1,3 @@
-
 import { createTheme, hexToRgb } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -63,6 +62,64 @@ const theme = createTheme({
       easeIn: "cubic-bezier(0.4, 0, 1, 1)",
       // The sharp curve is used by objects that may return to the screen at any time.
       sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
+    },
+  },
+  typography: {
+    body2: {
+      fontFamily: "F37Ginger",
+      fontWeight: 400,
+      fontSize: "16px",
+      lineHeight: "24px",
+      "@media screen and (min-width: 350px) and (max-width: 450px)": {
+        fontSize: "12px",
+        lineHeight: "16px",
+      },
+    },
+    h1: {
+      fontFamily: "F37Judge",
+      fontWeight: 700,
+      fontSize: "32px",
+      fontStyle: "italic",
+      lineHeight: "24px",
+      "@media screen and (min-width: 350px) and (max-width: 450px)": {
+        fontSize: "28px",
+      },
+      marginBottom: "20px",
+      // font-weight: 700,
+      // font-size: "28px,
+      // font-style: "italic",
+      // line-height: "24px";
+    },
+    h3: {
+      fontFamily: "F37Ginger",
+      fontWeight: 400,
+      fontSize: "26px",
+      lineHeight: "24px",
+      "@media screen and (min-width: 350px) and (max-width: 450px)": {
+        fontSize: "14px",
+        lineHeight: "16px",
+      },
+    },
+    h4: {
+      fontFamily: "F37Ginger",
+      fontWeight: 400,
+      fontSize: "24px",
+      lineHeight: "24px",
+      "@media screen and (min-width: 350px) and (max-width: 450px)": {
+        fontSize: "12px",
+        lineHeight: "16px",
+      },
+    },
+    h5: {
+      fontFamily: "F37Judge",
+      fontWeight: 700,
+      fontSize: "24px",
+      fontStyle: "italic",
+      lineHeight: "24px",
+      "@media screen and (min-width: 350px) and (max-width: 450px)": {
+        fontSize: "16px",
+        lineHeight: "16px",
+      },
     },
   },
 });

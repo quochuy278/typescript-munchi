@@ -1,6 +1,7 @@
 import {
   AppBar,
   Box,
+  IconButton,
   styled,
   Tab,
   Tabs,
@@ -34,31 +35,32 @@ const CustomTab = styled(Tab)(({ theme }) => ({
   padding: 0,
   textTransform: "none",
   "&:focus": {
-    backgroundColor: "black",
-    height: "30px",
-    borderRadius: "20px",
+    height: "20px",
     color: "white",
-    borderTopRightRadius: "20px",
-    borderTopLeftRadius: "20px",
-    opacity: 2,
-    marginBottom: "10px",
+  },
+  "&:active": {
+    backgroundColor: "grey",
+    color: "white",
   },
 }));
 const CustomTabs = styled(Tabs)(({ theme }) => ({
-  marginLeft: "10px" ,
+  marginLeft: "10px",
   marginRight: "10px",
-  "& .Mui-selected": {
+  "& .Mui-selected ": {
     backgroundColor: "black",
-    height: "30px",
-    borderRadius: "20px",
     color: "white",
-    borderTopRightRadius: "20px",
-    borderTopLeftRadius: "20px",
-    opacity: 2,
-    marginBottom: "10px",
   },
   "& .MuiTabs-indicator": {
-   display: "none"
+    display: "none",
+  },
+}));
+const CustomTabPanel = styled(TabPanel)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  "	.MuiButtonBase-root": {
+    color: "black",
+    backgroungColor: "white",
   },
 }));
 const TabName = styled("span")(() => ({}));
@@ -77,7 +79,9 @@ const MainPage = () => {
         {/* Nav bar */}
         <div className={styles.navContainer}>
           <div>
-            <img src={LiveLocation} />
+            <IconButton>
+              <img src={LiveLocation} />
+            </IconButton>
           </div>
           <div>
             <CustomTabs value={value} onChange={handleChange} centered>
@@ -91,15 +95,15 @@ const MainPage = () => {
           </div>
         </div>
         <div className={styles.mainScreen}>
-          <TabPanel value="delivery">
+          <CustomTabPanel value="delivery">
             <DeliveryPage />
-          </TabPanel>
-          <TabPanel value="eatin">
+          </CustomTabPanel>
+          <CustomTabPanel value="eatin">
             <EatInPage />
-          </TabPanel>
-          <TabPanel value="takeout">
+          </CustomTabPanel>
+          <CustomTabPanel value="takeout">
             <TakeOutPage />
-          </TabPanel>
+          </CustomTabPanel>
         </div>
       </TabContext>
     </div>

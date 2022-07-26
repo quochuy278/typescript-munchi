@@ -10,7 +10,7 @@
 .navContainer {
   width: 600px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -23,7 +23,7 @@
 }
   @media screen and (min-width: 350px) and (max-width: 400px) {
     .navContainer {
-      width: 300px;
+      width: 330px;
       display: flex;
       justify-content: space-evenly;
     }

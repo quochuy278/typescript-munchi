@@ -30,6 +30,15 @@ const theme = createTheme({
       "100": "#FFFFFF",
     },
   },
+  components: {
+    // Name of the component ⚛️
+    MuiButtonBase: {
+      defaultProps: {
+        // The props to apply
+        disableRipple: true, // No more ripple, on the whole application 💣!
+      },
+    },
+  },
   transitions: {
     duration: {
       shortest: 150,

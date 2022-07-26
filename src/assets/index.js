@@ -6,6 +6,8 @@ import LogOut from "./icons/logout.svg";
 import MainMunchiLogo from "./icons/main-logo.svg";
  import FacebookIcon from "./icons/facebook.svg";
 import LiveLocation from "./icons/livelocation.svg"
+import Dummy from "./img/dummy.jpg"
+
 export {
   AppleIcon,
   GoogleIcon,
@@ -15,4 +17,5 @@ export {
   MunchiLogo,
   FacebookIcon,
   LiveLocation,
+  Dummy,
 };

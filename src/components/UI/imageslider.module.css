@@ -1,0 +1,16 @@
+
+.mySwiper img {
+  width: 100%;
+   vertical-align: middle;
+}
+.mySlides {
+  display: none;
+}
+.swiper__item__container {
+  display: flex;
+}
+.swiperpagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

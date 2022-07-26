@@ -37,3 +37,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.swiper-pagination-bullet-active {
+
+  background-color: #FF3537 !important;
+  top: 0 !important;
+}

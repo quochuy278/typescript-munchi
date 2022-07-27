@@ -1,78 +1,30 @@
-import {
-  AppBar,
-  Box,
-  IconButton,
-  styled,
-  Tab,
-  Tabs,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Badge, IconButton, styled, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
-import CenterWrapper from "../../containers/CenterWrapper";
 import DeliveryPage from "./delivery/index";
 import EatInPage from "./eatin/index";
 import TakeOutPage from "./takeout/index";
-import { LiveLocation } from "../../assets";
-import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
-import styles from "./main.module.css";
-import CartIcon from "../../components/UI/cart";
-import NavBar from "../../components/UI/nav-bar";
-import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { TabletSharp } from "@mui/icons-material";
+import { Cart, LiveLocation } from "../../assets";
 
-const CustomTab = styled(Tab)(({ theme }) => ({
-  backgroundColor: "white",
-  color: "black",
-  width: "81px",
-  height: "34px",
-  borderRadius: "20px",
-  fontSize: "16px",
-  fontWeight: 400,
-  lineHeight: "16px",
-  textAlign: "center",
-  font: "F37Ginger",
-  padding: 0,
-  textTransform: "none",
-  "&:focus": {
-    height: "20px",
-    color: "white",
-  },
-  "&:active": {
-    backgroundColor: "grey",
-    color: "white",
-  },
-}));
-const CustomTabs = styled(Tabs)(({ theme }) => ({
-  marginLeft: "10px",
-  marginRight: "10px",
-  padding: 0,
-  "& .Mui-selected ": {
-    backgroundColor: "black",
-    color: "white",
-  },
-  "& .MuiTabs-indicator": {
-    display: "none",
-  },
-}));
-const CustomTabPanel = styled(TabPanel)(({ theme }) => ({
+import styles from "./main.module.css";
+
+import { TabContext, TabPanel } from "@mui/lab";
+
+const CustomTabPanel = styled(TabPanel)(() => ({
   display: "flex",
   flexDirection: "column",
-  minWidth: '100vw',
-  justifyContent: "center",
+  minWidth: "100vw",
   alignItems: "center",
-  padding: 0,
-  "	.MuiButtonBase-root": {
-    color: "black",
-    backgroungColor: "white",
-  },
-}));
 
+  justifyContent: "center",
+  marginLeft: "20px",
+  marginRight: "20px",
+  padding: 0,
+  overflow: "hidden",
+}));
 
 const MainPage = () => {
   const [value, setValue] = useState("delivery");
-  const theme = useTheme();
-  const [active, setActive] = useState(false);
+
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
     console.log(newValue);
@@ -84,33 +36,54 @@ const MainPage = () => {
         <div className={styles.navContainer}>
           <div>
             <IconButton>
-              <img src={LiveLocation} />
+              <img src={LiveLocation} alt="livelocation" />
             </IconButton>
           </div>
+
           <div>
-            <TabList value={value} onChange={handleChange} centered>
-              <CustomTab label="Delivery" value="delivery" />
-              <CustomTab label="Eat In" value="eatin" />
-              <CustomTab label="Take Out" value="takeout" />
-            </TabList>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              centered
+              allowScrollButtonsMobile={false}
+            >
+              <Tab label="Delivery" value="delivery" />
+              <Tab label="Eat In" value="eatin" />
+              <Tab label="Take Out" value="takeout" />
+            </Tabs>
           </div>
           <div>
-            <CartIcon />
+            <IconButton>
+              <Badge
+                badgeContent={4}
+                color="primary"
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "right",
+                }}
+              >
+                <img src={Cart} alt="cart" />
+              </Badge>
+            </IconButton>
           </div>
         </div>
 
         <CustomTabPanel value="delivery" className={styles.tabpanel}>
           <DeliveryPage />
         </CustomTabPanel>
-        <CustomTabPanel value="eatin">
+        <CustomTabPanel value="eatin" className={styles.tabpanel}>
           <EatInPage />
         </CustomTabPanel>
-        <CustomTabPanel value="takeout">
+        <CustomTabPanel value="takeout" className={styles.tabpanel}>
           <TakeOutPage />
         </CustomTabPanel>
+        {/* {value === "delivery" && (
+          <Box sx={{flex: 1}}>
+            <DeliveryPage />
+          </Box>
+        )} */}
       </TabContext>
     </div>
-    
   );
 };
 export default MainPage;

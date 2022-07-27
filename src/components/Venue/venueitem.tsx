@@ -1,10 +1,9 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Dummy, HappyFace } from "../../assets";
-import styles from "./trendingitem.module.css";
-import { getPlatforms } from "@ionic/react";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import styles from "./venueitem.module.css";
+
+
 const DUMMY_DATA = [
   {
     name: "Beijing 8 Kortteli",
@@ -57,34 +56,27 @@ const DUMMY_DATA = [
 ];
 
 
-const TrendingItem = (props: any) => {
-
-
-    const {name,time,dish,rating} = props.data
-   
+const VenueItem = (props: any) => {
+  
+    const { name, time, dish, rating } = props.data;
   return (
     <Card className={styles.card__container}>
-      <CardMedia
-        component="img"
-        height="122"
-        image={Dummy}
-        alt="trending"
-      />
+      <CardMedia component={"img"} width={358} height={190} src={Dummy} />
       <Box component={"div"} className={styles.card__title}>
-        <Typography variant="h5">{name}</Typography>
-        <Typography variant="body2">{time}</Typography>
+        <Typography variant="h3">Beijing 8 Kortteli</Typography>
+        <Typography variant="body1">25-35 min</Typography>
       </Box>
       <Box component={"div"} className={styles.card__title}>
-        <Typography variant="h4" color="text.disabled">
-          {dish}
+        <Typography variant="subtitle2" color="text.disabled">
+          Dumpling and tea"
         </Typography>
         <Box component={"div"} className={styles.card__content}>
           <img src={HappyFace} />
-          <Typography variant="body2">{rating}</Typography>
+          <Typography variant="body1">9.4</Typography>
         </Box>
       </Box>
     </Card>
   );
 };
 
-export default TrendingItem;
+export default VenueItem;

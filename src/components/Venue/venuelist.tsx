@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual } from "swiper";
 import { Fragment } from "react";
-import TrendingItem from "./trendingitem";
+import TrendingItem from "./venueitem";
+import VenueItem from "./venueitem";
 
 const DUMMY_DATA = [
   {
@@ -55,21 +56,21 @@ const DUMMY_DATA = [
 ];
 
 
-const TrendingList = () => {
+const VenueList = () => {
   return (
     <Fragment>
       <Swiper
         modules={[Virtual]}
         spaceBetween={30}
-        slidesPerView={2}
+        slidesPerView={4}
         virtual
-        style={{ overflow: "hidden", padding: 0 }}
-        direction="horizontal"
+        style={{padding: 0 }}
+        direction="vertical"
       >
         {DUMMY_DATA.map((data) => {
           return (
             <SwiperSlide>
-              <TrendingItem data={data} />
+              <VenueItem data={data} />
             </SwiperSlide>
           );
         })}
@@ -78,4 +79,4 @@ const TrendingList = () => {
   );
 };
 
-export default TrendingList;
+export default VenueList;

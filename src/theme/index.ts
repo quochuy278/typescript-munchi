@@ -1,4 +1,4 @@
-import { createTheme, hexToRgb } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -31,10 +31,54 @@ const theme = createTheme({
   },
   components: {
     // Name of the component ⚛️
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          border: "none",
+        },
+      },
+    },
     MuiButtonBase: {
       defaultProps: {
         // The props to apply
         disableRipple: true, // No more ripple, on the whole application 💣!
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          alignItems: "center",
+        },
+        indicator: {
+          display: "none",
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          minHeight: "34px",
+          minWidth: "81px",
+          color: "black",
+          textTransform: "none",
+          backgroundColor: "white",
+          width: "81px",
+          height: "34px",
+          borderRadius: "20px",
+          fontSize: "16px",
+          fontWeight: 400,
+          lineHeight: "16px",
+          textAlign: "center",
+          fontFamily: "F37Ginger",
+          padding: 0,
+          transition: "0.7s",
+          "&.Mui-selected": {
+            color: "white",
+            backgroundColor: "black",
+          },
+        },
       },
     },
   },
@@ -75,8 +119,19 @@ const theme = createTheme({
         lineHeight: "16px",
       },
     },
+    body1: {
+      fontFamily: "F37Ginger",
+      fontWeight: 400,
+      fontSize: "16px",
+      lineHeight: "24px",
+      alignItems: "center",
+      "@media screen and (min-width: 350px) and (max-width: 450px)": {
+        fontSize: "14px",
+        lineHeight: "16px",
+      },
+    },
     h1: {
-      fontFamily: "F37Judge",
+      fontFamily: "F37JudgeBold",
       fontWeight: 700,
       fontSize: "32px",
       fontStyle: "italic",
@@ -90,14 +145,25 @@ const theme = createTheme({
       // font-style: "italic",
       // line-height: "24px";
     },
-    h3: {
-      fontFamily: "F37Ginger",
+    subtitle2: {
+      //styleName: Subheadline 3;
+      fontfamily: "F37 Ginger",
+      fontSize: "14px",
       fontWeight: 400,
+      lineHeight: "16px",
+      letterSpacing: "0em",
+      textAlign: "left",
+    },
+    h3: {
+      fontFamily: "F37JudgeBold",
+      fontWeight: 700,
       fontSize: "26px",
       lineHeight: "24px",
+      fontStyle: "italic",
+      textAlign: "center",
       "@media screen and (min-width: 350px) and (max-width: 450px)": {
-        fontSize: "14px",
-        lineHeight: "16px",
+        fontSize: "20px",
+        lineHeight: "24px",
       },
     },
     h4: {
@@ -111,7 +177,7 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontFamily: "F37Judge",
+      fontFamily: "F37JudgeBold",
       fontWeight: 700,
       fontSize: "24px",
       fontStyle: "italic",

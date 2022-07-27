@@ -32,11 +32,12 @@
 }
   @media screen and (min-width: 350px) and (max-width: 450px) {
     .navContainer {
-      width: 300px;
+      width: 400px;
       display: flex;
-      justify-content: space-evenly;
       padding: 10px;
+      justify-content: space-evenly;
     }
+   
 .tabpanel {
   display: flex;
   flex-direction: column;

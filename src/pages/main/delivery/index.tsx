@@ -10,6 +10,8 @@ import ImageSlider from "../../../components/UI/image-slider";
 import { Typography } from "@mui/material";
 
 import TrendingList from "../../../components/Trending/trendinglist";
+import VibeList from "../../../components/Vibe/vibelist";
+import VenueList from "../../../components/Venue/venuelist";
 
 const DUMMY_DATA = [
   {
@@ -48,9 +50,14 @@ const DeliveryPage = () => {
           <TrendingList />
         </div>
         {/* Cards slider */}
-
         <Typography variant="h1">Choose your vibe</Typography>
+        <div className={styles.vibe__container}>
+          <VibeList />
+        </div>
         <Typography variant="h1">Venues delivering to you</Typography>
+        {/* <div className={styles.venues__container}>
+          <VenueList />
+        </div> */}
       </div>
     </Fragment>
   );

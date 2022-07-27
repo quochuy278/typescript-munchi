@@ -57,7 +57,7 @@ const DUMMY_DATA = [
 const TrendingList = () => {
   return (
     <Fragment>
-      <Swiper modules={[Virtual]} spaceBetween={50} slidesPerView={2} virtual>
+      <Swiper modules={[Virtual]} spaceBetween={50} slidesPerView={2} virtual style={{overflow: "hidden"}}>
         {DUMMY_DATA.map((data) => {
           return (
             <SwiperSlide>

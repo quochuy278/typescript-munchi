@@ -18,7 +18,7 @@ import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
 import styles from "./main.module.css";
 import CartIcon from "../../components/UI/cart";
 import NavBar from "../../components/UI/nav-bar";
-import { TabContext, TabPanel } from "@mui/lab";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { TabletSharp } from "@mui/icons-material";
 
 const CustomTab = styled(Tab)(({ theme }) => ({
@@ -46,6 +46,7 @@ const CustomTab = styled(Tab)(({ theme }) => ({
 const CustomTabs = styled(Tabs)(({ theme }) => ({
   marginLeft: "10px",
   marginRight: "10px",
+  padding: 0,
   "& .Mui-selected ": {
     backgroundColor: "black",
     color: "white",
@@ -57,14 +58,16 @@ const CustomTabs = styled(Tabs)(({ theme }) => ({
 const CustomTabPanel = styled(TabPanel)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
+  minWidth: '100vw',
   justifyContent: "center",
   alignItems: "center",
+  padding: 0,
   "	.MuiButtonBase-root": {
     color: "black",
     backgroungColor: "white",
   },
 }));
-const TabName = styled("span")(() => ({}));
+
 
 const MainPage = () => {
   const [value, setValue] = useState("delivery");
@@ -85,29 +88,29 @@ const MainPage = () => {
             </IconButton>
           </div>
           <div>
-            <CustomTabs value={value} onChange={handleChange} centered>
+            <TabList value={value} onChange={handleChange} centered>
               <CustomTab label="Delivery" value="delivery" />
               <CustomTab label="Eat In" value="eatin" />
               <CustomTab label="Take Out" value="takeout" />
-            </CustomTabs>
+            </TabList>
           </div>
           <div>
             <CartIcon />
           </div>
         </div>
-        <div className={styles.mainScreen}>
-          <CustomTabPanel value="delivery">
-            <DeliveryPage />
-          </CustomTabPanel>
-          <CustomTabPanel value="eatin">
-            <EatInPage />
-          </CustomTabPanel>
-          <CustomTabPanel value="takeout">
-            <TakeOutPage />
-          </CustomTabPanel>
-        </div>
+
+        <CustomTabPanel value="delivery" className={styles.tabpanel}>
+          <DeliveryPage />
+        </CustomTabPanel>
+        <CustomTabPanel value="eatin">
+          <EatInPage />
+        </CustomTabPanel>
+        <CustomTabPanel value="takeout">
+          <TakeOutPage />
+        </CustomTabPanel>
       </TabContext>
     </div>
+    
   );
 };
 export default MainPage;
